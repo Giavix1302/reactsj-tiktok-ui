@@ -17,7 +17,8 @@
     justify-content: space-between;
 }
 
-.search, .search-result {
+.search,
+.search-result {
     width: 361px;
 }
 
@@ -64,7 +65,7 @@
     font-weight: 600;
     color: rgba(22, 24, 35, 0.5);
     padding: 5px 12px;
-} 
+}
 
 .clear,
 .loading {
@@ -90,3 +91,17 @@
         background-color: rgba(22, 24, 35, 0.06);
     }
 }
+
+.actions {
+    display: flex;
+    align-items: center;
+}
+
+.more-btn {
+    font-size: 20px;
+    background-color: transparent;
+    margin-left: 24px;
+    padding: 4px 10px;
+}
+
+
