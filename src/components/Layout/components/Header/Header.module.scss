@@ -99,11 +99,30 @@
 }
 
 .action-btn {
+    position: relative;
+    display: flex;
+    align-items: flex-end;
     color: #161823;
     font-size: 2.4rem;
-    padding: 4px 12px;
+    padding: 0 12px;
     background-color: transparent;
     cursor: pointer;
+}
+
+.badge {
+    position: absolute;
+    top: -6px;
+    right: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--white);
+    background-color: var(--primary-color);
+    font-size: 1.4rem;
+    width: 30px;
+    height: 20px;
+    border-radius: 10px;
+    font-family: 'TikTokFont', sans-serif;
 }
 
 .more-btn {
@@ -115,6 +134,7 @@
 }
 
 .user-avatar {
+    margin-left: 20px;
     width: 32px;
     height: 32px;
     object-fit: cover;
