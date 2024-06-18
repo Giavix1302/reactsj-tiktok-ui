@@ -2,11 +2,18 @@
     --search-height: 46px;
     --search-button-width: 52px;
 
-    height: var(--default-layout-header-height);
-    box-shadow: 0 1px 1px rgb(0 0 0 / 12%);
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 10;
     display: flex;
     justify-content: center;
+    
     width: 100%;
+    height: var(--default-layout-header-height);
+    background-color: #fff;
+    box-shadow: 0 1px 1px rgb(0 0 0 / 12%);
 }
 
 .inner {
@@ -16,6 +23,10 @@
     align-items: center;
     justify-content: space-between;
     padding: 0 var(--default-layout-horizontal-spacer);
+}
+
+.logo-link {
+    display: flex;
 }
 
 
@@ -48,7 +59,7 @@
     width: 30px;
     height: 20px;
     border-radius: 10px;
-    font-family: 'TikTokFont', sans-serif;
+    font-family: var(--font-family);
 }
 
 .more-btn {

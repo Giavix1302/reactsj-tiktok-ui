@@ -11,7 +11,7 @@ import { useState } from "react";
 const cx = classNames.bind(styles)
 const defaultFN = () => { }
 
-function Menu({ children, items = [], onChange = defaultFN }) {
+function Menu({ children, items = [], hideOnClick = false, onChange = defaultFN }) {
 
     const [history, setHistory] = useState([{ data: items }])
 
@@ -34,6 +34,7 @@ function Menu({ children, items = [], onChange = defaultFN }) {
         <Tippy
             offset={[12, 8]}
             interactive
+            hideOnClick={hideOnClick}
             placement='bottom-end'
             render={(attrs) => (
                 <div className={cx('menu-list')} tabIndex="-1" {...attrs}>
@@ -41,7 +42,7 @@ function Menu({ children, items = [], onChange = defaultFN }) {
                         {history.length > 1 && <Header title='Languages' onBack={() => {
                             setHistory(prev => prev.slice(0, prev.length - 1))
                         }} />}
-                        {renderItems()}
+                        <div className={cx('menu-body')}>{renderItems()}</div>
                     </PopperWrapper>
                 </div>
             )}

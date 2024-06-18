@@ -1,22 +1,20 @@
-
-
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faEllipsisVertical, faEarthAsia, faKeyboard, faGear, faCoins, faUser, faSignOut } from '@fortawesome/free-solid-svg-icons';
 import { faCircleQuestion } from '@fortawesome/free-regular-svg-icons';
-
+import { Link } from 'react-router-dom';
 import Tippy from '@tippyjs/react';
 import 'tippy.js/dist/tippy.css';
-
 import classNames from 'classnames/bind';
 import styles from './Header.module.scss'
-import images from '~/assets/images'
 
+import routesConfig from '~/config/routes'
+import images from '~/assets/images'
 import Button from '~/components/Button';
 import Menu from '~/components/Popper/Menu';
 import Image from '~/components/Image';
-
 import { InboxIcon, SentIcon } from '~/components/Icons';
 import Search from '~/components/Layout/components/Search';
+
 
 const cx = classNames.bind(styles)
 
@@ -52,11 +50,7 @@ const MENU_ITEMS = [
 
 
 function Header() {
-
-
     const currentUser = true
-
-    
 
     const handleMenuChange = (menuItem) => {
         console.log(menuItem);
@@ -89,8 +83,8 @@ function Header() {
 
     return <header className={cx('wrapper')}>
         <div className={cx('inner')}>
-            <img src={images.logo} alt='tiktok' />
-            
+            <Link to={routesConfig.home} className={cx('logo-link')}><img src={images.logo} alt='tiktok' /></Link>
+
             <Search />
 
             <div className={cx('actions')}>
@@ -123,7 +117,6 @@ function Header() {
                     {currentUser ? (
                         <Image
                             className={cx('user-avatar')}
-                            src='https://p16-sign-sg.tiktokcdn.com/aweme/100x100/tos-alisg-avt-0068/866f38f49ae81c7c8a364b478d2be03c.jpeg?lk3s=a5d48078&nonce=39224&refresh_token=574b48f5f75dfd57dc74912148bf20bb&x-expires=1717682400&x-signature=Ao2Tx8x3P0CkND%2BQDFDZIRwYvaI%3D&shp=a5d48078&shcp=81f88b70'
                             alt="Nguyen Van A"
                         />
                     ) : (
