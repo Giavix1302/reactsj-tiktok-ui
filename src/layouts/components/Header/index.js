@@ -7,13 +7,13 @@ import 'tippy.js/dist/tippy.css';
 import classNames from 'classnames/bind';
 import styles from './Header.module.scss'
 
-import routesConfig from '~/config/routes'
+import config from '~/config'
 import images from '~/assets/images'
 import Button from '~/components/Button';
 import Menu from '~/components/Popper/Menu';
 import Image from '~/components/Image';
 import { InboxIcon, SentIcon } from '~/components/Icons';
-import Search from '~/components/Layout/components/Search';
+import Search from '~/layouts/components/Search';
 
 
 const cx = classNames.bind(styles)
@@ -83,7 +83,7 @@ function Header() {
 
     return <header className={cx('wrapper')}>
         <div className={cx('inner')}>
-            <Link to={routesConfig.home} className={cx('logo-link')}><img src={images.logo} alt='tiktok' /></Link>
+            <Link to={config.routes.home} className={cx('logo-link')}><img src={images.logo} alt='tiktok' /></Link>
 
             <Search />
 
